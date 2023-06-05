@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="text-end">
-    <a href="{{route('admin.projects.create')}}">Add Project</a>
+    <a class="btn btn-primary m-3" href="{{route('admin.projects.create')}}">Add Project</a>
 </div>
 
 @if (session('message'))
@@ -44,5 +44,6 @@
         @endforeach
     </tbody>
   </table>
+  {{$projects->links('vendor.pagination.bootstrap-5')}}
   @include('partials.delete_modal')
 @endsection
