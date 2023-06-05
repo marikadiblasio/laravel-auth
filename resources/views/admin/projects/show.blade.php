@@ -8,7 +8,7 @@
             <img src="{{ $project->image }}" alt="{{ $project->name }}">
         </div>
         <a href="{{ $project->url }}">View GitHub</a>
-        <p class="text-white">{{ $project->description }}</p>
+        <p class="text-white">{!! $project->description !!}</p>
     </div>
         <div>
             <a href=""><i class="fa-solid fa-pencil me-1"></i></a>
