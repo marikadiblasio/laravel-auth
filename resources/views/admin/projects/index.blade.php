@@ -32,7 +32,7 @@
                 <td>{{ $project->created_at}}</td>
                 <td>
                     <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye me-1"></i></a>
-                    <a href=""><i class="fa-solid fa-pencil me-1"></i></a>
+                    <a href="{{route('admin.projects.edit', $project->slug)}}"><i class="fa-solid fa-pencil me-1"></i></a>
                     <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
                         @csrf
                         @method('DELETE')
