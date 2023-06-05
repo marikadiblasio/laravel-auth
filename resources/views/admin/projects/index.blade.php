@@ -2,10 +2,14 @@
 
 @section('content')
 
-@if(session()->has('message'))
-<div class="alert-alert-danger">
-{{session()->get('message')}}
+<div class="text-end">
+    <a href="{{route('admin.projects.create')}}">Add Project</a>
 </div>
+
+@if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
 @endif
 
 <h1 class="text-white">Index Project</h1>
@@ -32,7 +36,7 @@
                     <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type='submit' class="delete-button" data-item-title="{{ $project->title }}"> <i
+                        <button type='submit' class="delete-button" data-item-title="{{ $project->name }}"> <i
                                 class="fa-solid fa-trash text-danger me-1"></i></button>
                     </form>
                 </td>
@@ -40,4 +44,5 @@
         @endforeach
     </tbody>
   </table>
+  @include('partials.delete_modal')
 @endsection

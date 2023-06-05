@@ -25,7 +25,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create')
+        return view('admin.projects.create');
     }
 
     /**
@@ -77,6 +77,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('admin.projects.index')->with('message', "{{$project->title}} deleted");
+        return redirect()->route('admin.projects.index')->with('message', "{$project->name} deleted");
     }
 }
