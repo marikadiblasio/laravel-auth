@@ -92,9 +92,10 @@
                                 class="fa-solid me-1 fa-house"></i><span class="d-none d-md-inline">Home</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" role="button" href="#"><i
-                                class="fa-solid me-1 fa-chart-simple"></i><span
-                                class="d-none d-md-inline">Stats</span></a>
+                        <a class="nav-link text-white" aria-current="page" role="button" href="{{route('admin.projects.index')}}">
+                            <i class="fa-solid me-1 fa-code"></i>
+                            <span class="d-none d-md-inline">Projects</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" aria-current="page" role="button" href="#"><i
@@ -121,10 +122,10 @@
                             <div class="col-12 col-sm-4 col-lg-6 mt-4 order-lg-1">
                                 <h2 class="display-6 fw-medium">BoolFolio Base <span>
                             </div>
-                            <div class="col-12 col-sm-4 col-lg-4 mt-4 mb-4 lh-lg order-lg-2">
+                            {{-- <div class="col-12 col-sm-4 col-lg-4 mt-4 mb-4 lh-lg order-lg-2">
                                 <span>Visitatori online</span>
                                 <div><span class="display-6">2</span></div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
