@@ -2,18 +2,14 @@
 
 @section('content')
 
-<div class="text-end">
-    <a class="btn btn-primary m-3" href="{{route('admin.projects.create')}}">Add Project</a>
-</div>
-
 @if (session('message'))
     <div class="alert alert-success">
         {{ session('message') }}
     </div>
 @endif
 
-<h1 class="text-white">Index Project</h1>
-<table class="table">
+<h1 class="text-white py-3">Index Project</h1>
+<table class="table pb-3">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -28,22 +24,22 @@
             <tr>
                 <th scope="row">{{ $project->id}}</th>
                 <td>{{ $project->name}}</td>
-                <td><img src="{{ $project->image}}" alt="{{ $project->name}}"></td>
+                <td><img class="my-table-img img-thumbnail" src="{{ $project->image}}" alt="{{ $project->name}}"></td>
                 <td>{{ $project->created_at}}</td>
                 <td>
-                    <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye me-1"></i></a>
-                    <a href="{{route('admin.projects.edit', $project->slug)}}"><i class="fa-solid fa-pencil me-1"></i></a>
-                    <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                    <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye me-2"></i></a>
+                    <a href="{{route('admin.projects.edit', $project->slug)}}"><i class="fa-solid fa-pencil me-2"></i></a>
+                    <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type='submit' class="delete-button" data-item-title="{{ $project->name }}"> <i
+                        <button type='submit' class="delete-button border-0" data-item-title="{{ $project->name }}"> <i
                                 class="fa-solid fa-trash text-danger me-1"></i></button>
                     </form>
                 </td>
             </tr>
         @endforeach
     </tbody>
-  </table>
+</table>
   {{$projects->links('vendor.pagination.bootstrap-5')}}
   @include('partials.delete_modal')
 @endsection

@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="my-logo">
+                    <div class="ms-small-square">
                         <img class="my-logo-img" src="/images/logo.png" alt="logo">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
@@ -83,8 +83,9 @@
                 </div>
             </div>
         </nav>
-        {{-- SIDEBAR ADMIN --}}
+
         <div class="d-flex ms-wrapper bg-dark">
+            {{-- SIDEBAR ADMIN --}}
             <nav id="ms-sidebar" class="pt-4 text-white d-flex flex-column flex-shrink-0 h-100">
                 <ul class="nav">
                     <li class="nav-item">
@@ -113,11 +114,10 @@
             <div class="overflow-y-auto flex-grow-1 ms-wrapper">
                 <div id="aside" class="bg-primary text-white">
                     <div class="container-fluid pb-4">
-                        <div class="row">
+                        <div class="row justify-content-between">
                             <div class="col-12 col-sm-4 col-lg-2 mt-4 order-lg-3">
                                 <span>Nuovo Progetto</span>
-                                <a type="button" data-bs-toggle="offcanvas" href="#myoffcanvas" role="button"
-                                    aria-controls="myoffcanvas" class="btn btn-lg btn-outline-light ms-2">+</a>
+                                <a type="button"  href="{{route('admin.projects.create')}}" class="btn btn-lg btn-outline-light ms-2">+</a>
                             </div>
                             <div class="col-12 col-sm-4 col-lg-6 mt-4 order-lg-1">
                                 <h2 class="display-6 fw-medium">BoolFolio Base <span>

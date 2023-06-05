@@ -13,17 +13,10 @@ body{
     // color: $my-dark;
 
 }
-.my-logo{
-    height: 2rem;
-    width: 2rem;
-}
 .my-logo-img{
     width: 100%;
     aspect-ratio: 1/1;
 }
-// .debug {
-//     border: 1px solid red;
-// }
 .ms-bg {
     background-color: #165bba;
 }
@@ -56,6 +49,11 @@ header {
 .ms-small-square {
     width: 2rem;
     height: 2rem;
+}
+// Index Project
+.my-table-img{
+    width: 3rem;
+    height: 3rem;
 }
 /* Responsive */
 @media screen and (min-width: 767px){
