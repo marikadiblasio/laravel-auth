@@ -8,19 +8,39 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="name" class="form-label">Project Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{$project->name}}">
+                <input type="text" class="form-control" id="name" name="name" value="{{old('name', $project->name)}}" required>
+                @error('name')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Project image url</label>
-                <input type="url" class="form-control" id="image" name="image" value="{{$project->image}}">
+                <input type="text" class="form-control" id="image" name="image" value="{{old('image', $project->image)}}">
+                @error('image')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
-                <label for="github-url" class="form-label">Project github-url url</label>
-                <input type="url" class="form-control" id="github-url" name="github-url" value="{{$project->url}}">
+                <label for="url" class="form-label">Project url</label>
+                <input type="url" class="form-control" id="url" name="url" value="{{old('url', $project->url)}}">
+                @error('url')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Project description</label>
-                <textarea name="description" id="description" class="form-control" cols="30" rows="10">{{$project->description}}</textarea>
+                <textarea name="description" id="description" class="form-control" cols="30" rows="10">{{old('description', $project->description)}}</textarea>
+                @error('description')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-warning">Reset</button>

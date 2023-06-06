@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ 'Boolfolio Base' }}</title>
 
 
     <!-- Fonts -->
@@ -112,7 +112,7 @@
             </nav>
             {{-- NAVBAR SUPERIORE - HEADER --}}
             <div class="overflow-y-auto flex-grow-1 ms-wrapper">
-                <div id="aside" class="bg-primary text-white">
+                <div id="aside" class="bg-dark-blue text-white">
                     <div class="container-fluid pb-4">
                         <div class="row justify-content-between">
                             <div class="col-12 col-sm-4 col-lg-2 mt-4 order-lg-3">

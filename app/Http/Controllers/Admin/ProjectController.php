@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -35,7 +36,11 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        $data=$request->validated();
+        $slug=Str::slug($data['name'], '-');
+        $data['slug']=$slug;
+        $project = Project::create($data);
+        return redirect()->route('admin.projects.show', $project->slug);
     }
 
     /**
@@ -66,7 +71,11 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data=$request->validated();
+        $slug=Str::slug($data['name'], '-');
+        $data['slug']=$slug;
+        $project->update($data);
+        return redirect()->route('admin.projects.show', $project->slug);
     }
 
     /**

@@ -27,8 +27,8 @@
                 <td><img class="my-table-img img-thumbnail" src="{{ $project->image}}" alt="{{ $project->name}}"></td>
                 <td>{{ $project->created_at}}</td>
                 <td>
-                    <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye me-2"></i></a>
-                    <a href="{{route('admin.projects.edit', $project->slug)}}"><i class="fa-solid fa-pencil me-2"></i></a>
+                    <a class="text-dark-blue" href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye me-2"></i></a>
+                    <a class="text-dark-blue" href="{{route('admin.projects.edit', $project->slug)}}"><i class="fa-solid fa-pencil me-2"></i></a>
                     <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
                         @csrf
                         @method('DELETE')
