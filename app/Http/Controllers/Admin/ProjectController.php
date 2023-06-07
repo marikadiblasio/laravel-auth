@@ -81,7 +81,9 @@ class ProjectController extends Controller
         $data['slug']=$slug;
         if($request->hasFile('image')){
             if($project->image){ //se esiste immagine precedente
-            Storage::delete($project->image);//cancellala
+                $toRemove="http://127.0.0.1:8000/storage/";//aggiusta il path
+                $imagetoRemove=str_replace($toRemove, '', $project->image);
+                Storage::delete($imagetoRemove);//cancellala
             }
             $image_path= Storage::put('uploads', $request->image);
             $data['image']=asset('storage/' . $image_path);
@@ -98,7 +100,9 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         if($project->image){ //se esiste immagine precedente
-            Storage::delete($project->image);//cancellala
+            $toRemove="http://127.0.0.1:8000/storage/";//aggiusta il path
+            $imagetoRemove=str_replace($toRemove, '', $project->image);
+            Storage::delete($imagetoRemove);//cancellala
         }
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', "{$project->name} deleted");
