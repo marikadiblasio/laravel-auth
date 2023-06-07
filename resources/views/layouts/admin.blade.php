@@ -100,7 +100,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" aria-current="page" role="button" href="#"><i
-                                class="fa-solid me-1 fa-signal"></i><span class="d-none d-md-inline">Signals</span></a>
+                                class="fa-solid me-1 fa-tag"></i><span class="d-none d-md-inline">Type</span></a>
                     </li>
                 </ul>
                 <ul class="ms-h120px mt-auto nav ">

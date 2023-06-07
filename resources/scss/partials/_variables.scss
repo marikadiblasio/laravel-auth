@@ -11,13 +11,9 @@ $my-dark-blue: #051e34;
     $color-contrast-dark:      $my-light !default;
     $color-contrast-light:     $my-dark !default;
     $pagination-color:         $my-dark-blue !default;
-    $pagination-bg:            var(--#{$prefix}body-bg) !default;
     $pagination-hover-bg:   $my-dark-blue !default;
     $pagination-focus-bg:   $my-dark-blue !default;
-    // scss-docs-start theme-color-variables
-    // $secondary:     #568C4D !default;
-    // $light:         #AABDBF !default;
-    // $dark:          #593E2E !default;
+    $pagination-active-bg: $my-dark-blue !default;
 
 //Text
 $my-font:'Roboto', sans-serif;
